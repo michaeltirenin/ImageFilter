@@ -60,12 +60,26 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     func setupActionController() {
         
-        println("setting up action controller")
+//        println("setting up action controller")
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-            let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default, handler: {(action: UIAlertAction!) -> Void in
             
-                //self.presentViewController(self.alertView, animated: true, completion: nil)
-                self.presentViewController(self.cameraPicker, animated: true, completion: nil)
+//            if NSUserDefaults.standardUserDefaults().objectForKey("notFirstRun") {
+//                println("print first run")
+//                
+//            }
+            
+            let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default, handler: {(action: UIAlertAction!) -> Void in
+                
+                if NSUserDefaults.standardUserDefaults().objectForKey("notFirstRun") {
+                    println("1st run")
+                    //self.presentViewController(self.alertView, animated: true, completion: nil)
+                    self.presentViewController(self.cameraPicker, animated: true, completion: nil)
+                } else {
+                    NSUserDefaults.standardUserDefaults().setBool(true, forKey: "notFirstRun")
+                    println("NOT 1st run")
+                    self.presentViewController(self.alertView, animated: true, completion: nil)
+                    self.presentViewController(self.cameraPicker, animated: true, completion: nil)
+                }
             })
             self.actionController.addAction(cameraAction)
         }
