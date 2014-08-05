@@ -75,9 +75,10 @@
 		F289131119901A5C00C4FE87 /* ImageFilter */ = {
 			isa = PBXGroup;
 			children = (
+				F2FCE2B519913AF60005ACCD /* Models */,
+				F2FCE2B619913AFB0005ACCD /* Views */,
+				F2FCE2B719913B000005ACCD /* Controllers */,
 				F289131419901A5C00C4FE87 /* AppDelegate.swift */,
-				F289131619901A5C00C4FE87 /* ViewController.swift */,
-				F289131819901A5C00C4FE87 /* Main.storyboard */,
 				F289131B19901A5C00C4FE87 /* Images.xcassets */,
 				F289131219901A5C00C4FE87 /* Supporting Files */,
 			);
@@ -107,6 +108,29 @@
 				F289132619901A5C00C4FE87 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F2FCE2B519913AF60005ACCD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F2FCE2B619913AFB0005ACCD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F289131819901A5C00C4FE87 /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F2FCE2B719913B000005ACCD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F289131619901A5C00C4FE87 /* ViewController.swift */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +182,7 @@
 				TargetAttributes = {
 					F289130E19901A5C00C4FE87 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = C65MMLEB3C;
 					};
 					F289132019901A5C00C4FE87 = {
 						CreatedOnToolsVersion = 6.0;
@@ -397,6 +422,7 @@
 				F289132D19901A5C00C4FE87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F289132E19901A5C00C4FE87 /* Build configuration list for PBXNativeTarget "ImageFilterTests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +431,7 @@
 				F289133019901A5C00C4FE87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

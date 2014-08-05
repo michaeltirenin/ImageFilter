@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cA1-wm-X1g">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mu1-58-3ce">
-                                <rect key="frame" x="168" y="63" width="265" height="318"/>
+                                <rect key="frame" x="168" y="107" width="265" height="318"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="265" id="1jO-pb-zor"/>
@@ -25,7 +25,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIf-mR-uMd">
-                                <rect key="frame" x="168" y="63" width="265" height="318"/>
+                                <rect key="frame" x="168" y="107" width="265" height="318"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="318" id="OI1-fa-DW3"/>
                                     <constraint firstAttribute="width" constant="265" id="mY9-O8-Us6"/>
@@ -47,7 +47,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="getPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kL3-g6-h4v"/>
+                                    <action selector="getPhotoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tMp-TI-VXV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,12 +61,34 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MPp-Ng-T3Y" secondAttribute="bottom" constant="31" id="zd6-Wg-7bp"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="rB2-Ip-vab"/>
                     <connections>
+                        <outlet property="getPhotoFromImageOutlet" destination="aIf-mR-uMd" id="5fX-fc-rX5"/>
                         <outlet property="mainImageView" destination="mu1-58-3ce" id="qzp-CL-1Dk"/>
+                        <outlet property="photoButtonOutlet" destination="MPp-Ng-T3Y" id="vKb-ok-ivu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="823" y="797"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bIl-9U-lcm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cA1-wm-X1g" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LCh-jo-4Cp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Wc2-b1-wAT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IoB-G5-L8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="127" y="797"/>
         </scene>
     </scenes>
 </document>
