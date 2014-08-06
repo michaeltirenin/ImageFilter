@@ -12,6 +12,9 @@
 		F289131A19901A5C00C4FE87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F289131819901A5C00C4FE87 /* Main.storyboard */; };
 		F289131C19901A5C00C4FE87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F289131B19901A5C00C4FE87 /* Images.xcassets */; };
 		F289132819901A5C00C4FE87 /* ImageFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289132719901A5C00C4FE87 /* ImageFilterTests.swift */; };
+		F2ACC5E21991DFCA0080F455 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ACC5E11991DFCA0080F455 /* PhotoCell.swift */; };
+		F2ACC5E41991DFF20080F455 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ACC5E31991DFF20080F455 /* GridViewController.swift */; };
+		F2ACC5E61991E0040080F455 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ACC5E51991E0040080F455 /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,9 @@
 		F289132119901A5C00C4FE87 /* ImageFilterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageFilterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F289132619901A5C00C4FE87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F289132719901A5C00C4FE87 /* ImageFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilterTests.swift; sourceTree = "<group>"; };
+		F2ACC5E11991DFCA0080F455 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		F2ACC5E31991DFF20080F455 /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
+		F2ACC5E51991E0040080F455 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				F289131819901A5C00C4FE87 /* Main.storyboard */,
+				F2ACC5E11991DFCA0080F455 /* PhotoCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -129,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				F289131619901A5C00C4FE87 /* ViewController.swift */,
+				F2ACC5E31991DFF20080F455 /* GridViewController.swift */,
+				F2ACC5E51991E0040080F455 /* PhotoViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -233,8 +242,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2ACC5E41991DFF20080F455 /* GridViewController.swift in Sources */,
 				F289131719901A5C00C4FE87 /* ViewController.swift in Sources */,
+				F2ACC5E21991DFCA0080F455 /* PhotoCell.swift in Sources */,
 				F289131519901A5C00C4FE87 /* AppDelegate.swift in Sources */,
+				F2ACC5E61991E0040080F455 /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
