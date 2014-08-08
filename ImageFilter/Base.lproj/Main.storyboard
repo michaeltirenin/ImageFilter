@@ -153,12 +153,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X4R-Ed-aV5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="X4R-Ed-aV5">
                                 <rect key="frame" x="16" y="87" width="568" height="299"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2c4-c5-hs6">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2c4-c5-hs6">
                                 <rect key="frame" x="16" y="404" width="568" height="130"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="dxv-gM-gFJ"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V5v-D2-OcX">
                                     <size key="itemSize" width="110" height="110"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -217,7 +220,7 @@
                             <constraint firstItem="2c4-c5-hs6" firstAttribute="leading" secondItem="K0h-k0-LoB" secondAttribute="leadingMargin" id="DlQ-al-T67"/>
                             <constraint firstItem="X4R-Ed-aV5" firstAttribute="trailing" secondItem="K0h-k0-LoB" secondAttribute="trailingMargin" id="IJe-gX-Goe"/>
                             <constraint firstItem="cn9-is-Pjx" firstAttribute="top" secondItem="ahA-fj-bhs" secondAttribute="bottom" constant="20" id="KcS-Ti-ZGy"/>
-                            <constraint firstItem="ahA-fj-bhs" firstAttribute="top" secondItem="2c4-c5-hs6" secondAttribute="bottom" constant="16" id="QvJ-2l-c3O"/>
+                            <constraint firstItem="cn9-is-Pjx" firstAttribute="top" secondItem="2c4-c5-hs6" secondAttribute="bottom" constant="66" id="MI9-LH-mkm"/>
                             <constraint firstItem="X4R-Ed-aV5" firstAttribute="leading" secondItem="K0h-k0-LoB" secondAttribute="leadingMargin" id="WQB-Ix-pPR"/>
                             <constraint firstAttribute="centerX" secondItem="ahA-fj-bhs" secondAttribute="centerX" id="k4z-CX-Dcz"/>
                             <constraint firstItem="2c4-c5-hs6" firstAttribute="trailing" secondItem="K0h-k0-LoB" secondAttribute="trailingMargin" id="q8R-Tp-WFx"/>
