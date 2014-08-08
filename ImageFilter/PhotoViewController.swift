@@ -50,15 +50,15 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
         PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        let targetSize = CGSize(width: CGRectGetWidth(self.imageView.frame), height: CGRectGetHeight(self.imageView.frame))
-//        let targetSize = CGSize(width: 110, height: 110)
-        // request the image for the asset
-        PHImageManager.defaultManager().requestImageForAsset(self.asset, targetSize: targetSize, contentMode: PHImageContentMode.AspectFill, options: nil) { (result : UIImage!, [NSObject : AnyObject]!) -> Void in
-            self.imageView.image = result
-        }
-    }
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        let targetSize = CGSize(width: CGRectGetWidth(self.imageView.frame), height: CGRectGetHeight(self.imageView.frame))
+////        let targetSize = CGSize(width: 110, height: 110)
+//        // request the image for the asset
+//        PHImageManager.defaultManager().requestImageForAsset(self.asset, targetSize: targetSize, contentMode: PHImageContentMode.AspectFill, options: nil) { (result : UIImage!, [NSObject : AnyObject]!) -> Void in
+//            self.imageView.image = result
+//        }
+//    }
     
     @IBAction func selectPhotoButton(sender: UIButton) {
         self.delegate!.photoSelected(self.asset)
@@ -89,8 +89,6 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
         
         let filter = filters[indexPath.item] as Filter
         
-        println(filter)
-
         if self.filterThumbnail != nil {
             cell.filterImageView.image = filterThumbnail
             if filter.thumbnailImage != nil {
@@ -101,7 +99,7 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
                 })
             }
         }
-        
+
         return cell
     }
     
@@ -174,7 +172,7 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     func fetchThumbnailImage() {
         if self.selectedAsset != nil {
-            let targetSize = CGSize(width: CGRectGetWidth(self.imageView.frame), height: CGRectGetHeight(self.imageView.frame))
+            var targetSize = self.imageView.frame.size
             PHImageManager.defaultManager().requestImageForAsset(self.selectedAsset, targetSize: targetSize, contentMode: PHImageContentMode.AspectFill, options: nil, resultHandler: { (result: UIImage!, info: [NSObject : AnyObject]!) -> Void in
 
                 self.filterThumbnail = result
