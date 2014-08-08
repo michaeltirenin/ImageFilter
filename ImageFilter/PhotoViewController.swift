@@ -150,6 +150,8 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
                 var finalImage = UIImage(CGImage: cgImage)
                 var jpegData = UIImageJPEGRepresentation(finalImage, 0.5) // need to write data to disk // changed from 1.0 to 0.5
                 
+                // check Kirby's post
+                
                 var adjustmentData = PHAdjustmentData(formatIdentifier: self.adjustmentFormatterIdentifier, formatVersion: "1.0'", data: jpegData)
                 var contentEditingOutput = PHContentEditingOutput(contentEditingInput: contentEditingInput)
                 jpegData.writeToURL(contentEditingOutput.renderedContentURL, atomically: true)

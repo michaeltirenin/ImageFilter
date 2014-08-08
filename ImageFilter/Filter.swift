@@ -16,7 +16,7 @@ class Filter {
     init(name: String) {
         self.name = name
     }
-    
+    // Jeff's approach
     func createFilterThumbnailFromImage(image: UIImage, completionHandler: (image: UIImage) -> Void) {
         let inputImage = CIImage(image: image)
         var filter = CIFilter(name: self.name)
