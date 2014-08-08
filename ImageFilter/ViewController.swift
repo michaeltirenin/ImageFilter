@@ -14,6 +14,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     var bandwWasClicked : Bool = false
     var sepiaWasClicked : Bool = false
     
+    var addPhotoImageWasClicked : Bool = false
+    
     let photoPicker = UIImagePickerController()
     let cameraPicker = UIImagePickerController()
     let cancelPicker = UIImagePickerController()
@@ -51,8 +53,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             self.cameraPicker.delegate = self
         }
         
-        mainImageView.layer.borderColor = UIColor.grayColor().CGColor
-        mainImageView.layer.borderWidth = 1.5
+//        mainImageView.layer.borderColor = UIColor.grayColor().CGColor
+//        mainImageView.layer.borderWidth = 1.5
         
         PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
     }
@@ -65,6 +67,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 //        }
         self.imageViewSize = self.mainImageView.frame.size
         
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        getPhotoFromImageOutlet.backgroundColor = UIColor.clearColor()
+        getPhotoFromImageOutlet.titleLabel.text = ""
     }
 
 // to fix lag from PhotoVC to ViewVC - see Alex's file
@@ -264,13 +271,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 var filter : CIFilter!
                 
                 if self.bandwWasClicked == true {
-//                    filter = CIFilter(name: "CIUnsharpMask")
-                    filter = CIFilter(name: "CIPhotoEffectMono")
+//                    filter = CIFilter(name: "CISRGBToneCurveToLinear") //Maps color intensity from the sRGB color space to a linear gamma curve.
+//                    filter = CIFilter(name: "CIBloom") //Softens edges and applies a pleasant glow to an image.
+//                    filter = CIFilter(name: "CIColorInvert") //Inverts the colors in an image.
+//                    filter = CIFilter(name: "CIColorPosterize") //Remaps red, green, and blue color components to the number of brightness values you specify for each color component.
+                    filter = CIFilter(name: "CIPhotoEffectMono") //Applies a preconfigured set of effects that imitate black-and-white photography film with low contrast.
                     self.bandwWasClicked = false
                 }
                 
                 if self.sepiaWasClicked == true {
-                    filter = CIFilter(name: "CISepiaTone")
+                    filter = CIFilter(name: "CISepiaTone") //Maps the colors of an image to various shades of brown.
                     self.sepiaWasClicked = false
                 }
                 

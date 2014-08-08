@@ -23,6 +23,8 @@ class GridViewController: UIViewController, UICollectionViewDataSource, PhotoSel
         super.viewDidLoad()
         self.collectionView.dataSource = self
         self.imageManager = PHCachingImageManager()
+        
+        self.navigationItem.title = "Photos"
     }
     
     override func viewWillAppear(animated: Bool) {

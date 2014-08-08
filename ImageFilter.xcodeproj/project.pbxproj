@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F22B4E81199435F400A564B2 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B4E80199435F400A564B2 /* FilterCell.swift */; };
+		F22B4E8319947BC200A564B2 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B4E8219947BC200A564B2 /* Filter.swift */; };
 		F289131519901A5C00C4FE87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289131419901A5C00C4FE87 /* AppDelegate.swift */; };
 		F289131719901A5C00C4FE87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289131619901A5C00C4FE87 /* ViewController.swift */; };
 		F289131A19901A5C00C4FE87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F289131819901A5C00C4FE87 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F22B4E80199435F400A564B2 /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		F22B4E8219947BC200A564B2 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		F289130F19901A5C00C4FE87 /* ImageFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F289131319901A5C00C4FE87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F289131419901A5C00C4FE87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 		F2FCE2B519913AF60005ACCD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F22B4E8219947BC200A564B2 /* Filter.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			children = (
 				F289131819901A5C00C4FE87 /* Main.storyboard */,
 				F2ACC5E11991DFCA0080F455 /* PhotoCell.swift */,
+				F22B4E80199435F400A564B2 /* FilterCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -242,7 +248,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F22B4E8319947BC200A564B2 /* Filter.swift in Sources */,
 				F2ACC5E41991DFF20080F455 /* GridViewController.swift in Sources */,
+				F22B4E81199435F400A564B2 /* FilterCell.swift in Sources */,
 				F289131719901A5C00C4FE87 /* ViewController.swift in Sources */,
 				F2ACC5E21991DFCA0080F455 /* PhotoCell.swift in Sources */,
 				F289131519901A5C00C4FE87 /* AppDelegate.swift in Sources */,
