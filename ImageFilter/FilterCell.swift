@@ -19,4 +19,5 @@ class FilterCell: UICollectionViewCell {
 //            return CGSize(width: CGRectGetWidth(self.filterImageView.frame), height: CGRectGetHeight(self.filterImageView.frame))
 //        }
 //    }
+
 }

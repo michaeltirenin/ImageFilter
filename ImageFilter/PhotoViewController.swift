@@ -15,8 +15,6 @@ protocol PhotoSelectedDelegate {
 }
 
 class PhotoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate/*, PHPhotoLibraryChangeObserver*/ {
-
-//    var filterImageSize = FilterCell().filteredImageSize
     
     var asset : PHAsset!
     
@@ -25,7 +23,7 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
     @IBOutlet weak var imageView: UIImageView!
     
 // filter
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     let adjustmentFormatterIdentifier = "com.ImageFilter.michaeltirenin"
@@ -33,6 +31,8 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
     var context = CIContext(options: nil)
     
     var filterThumbnail : UIImage?
+    
+//    var filterThumbnailSize : CGSize!
     
     var filters = [Filter]()
     
@@ -63,6 +63,8 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
+//        self.filterThumbnailSize = self.filterThumbnail!.size
         
     }
 
@@ -98,22 +100,24 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
         let filter = filters[indexPath.item] as Filter
         
         cell.filterLabel.text = filterList[indexPath.item] as String
-
+        
         if self.filterThumbnail != nil {
             cell.filterImageView.image = filterThumbnail
+            println("one")
             if filter.thumbnailImage != nil {
                 cell.filterImageView.image = filter.thumbnailImage
+                println("two")
             } else {
                 filter.createFilterThumbnailFromImage(self.filterThumbnail!, completionHandler: { (image) -> Void in
                     cell.filterImageView.image = image
+                    println("three")
                 })
             }
         }
         
         return cell
     }
-    
-    func collectionView(collectionView: UICollectionView!, didDeselectItemAtIndexPath indexPath: NSIndexPath!) {
+    func collectionView(collectionView: UICollectionView!, didSelectItemAtIndexPath indexPath: NSIndexPath!) {
         
         var options = PHContentEditingInputRequestOptions()
         options.canHandleAdjustmentData = {(data : PHAdjustmentData!) -> Bool in
@@ -129,15 +133,15 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
             options, completionHandler: { (contentEditingInput: PHContentEditingInput!, info:[NSObject : AnyObject]!) -> Void in
                 
                 // grab image, convert to CIImage
-                var url = contentEditingInput.fullSizeImageURL
-                var orientation = contentEditingInput.fullSizeImageOrientation
+                let url = contentEditingInput.fullSizeImageURL
+                let orientation = contentEditingInput.fullSizeImageOrientation
                 
-                var inputImage = CIImage(contentsOfURL: url)
+                let inputImage = CIImage(contentsOfURL: url)
                 inputImage.imageByApplyingOrientation(orientation)
                 
                 // create filter, creat output image
                 //                var filter : CIFilter!
-                var filter = CIFilter(name: selectFilter)
+                let filter = CIFilter(name: selectFilter)
                 filter.setDefaults()
                 filter.setValue(inputImage, forKey: kCIInputImageKey)
                 var outputImage = filter.outputImage
@@ -252,16 +256,18 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
     func fetchThumbnailImage() {
         if self.asset != nil {
             //can't get to size to filterImageView
-            var targetSize = CGSize(width: CGRectGetWidth(self.imageView.frame), height: CGRectGetHeight(self.imageView.frame))
+            var targetSize = CGSize(width: CGRectGetWidth(self.imageView.frame)/2, height: CGRectGetHeight(self.imageView.frame)/2)
             PHImageManager.defaultManager().requestImageForAsset(self.asset, targetSize: targetSize, contentMode: PHImageContentMode.AspectFill, options: nil, resultHandler: { (result: UIImage!, info: [NSObject : AnyObject]!) -> Void in
 
                 self.filterThumbnail = result
             })
 
 //            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-//                
+//
 //                self.collectionView.reloadData()
 //            })
+            println(targetSize)
+
         }
     }
     
