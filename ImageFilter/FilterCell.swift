@@ -11,4 +11,12 @@ import UIKit
 class FilterCell: UICollectionViewCell {
         
     @IBOutlet weak var filterImageView: UIImageView!
+    @IBOutlet weak var filterLabel: UILabel!
+    
+    // from Leo
+//    var filteredImageSize : CGSize {
+//        get {
+//            return CGSize(width: CGRectGetWidth(self.filterImageView.frame), height: CGRectGetHeight(self.filterImageView.frame))
+//        }
+//    }
 }

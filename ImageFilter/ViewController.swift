@@ -33,7 +33,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     
     @IBOutlet weak var mainImageView: UIImageView!
 
-//    let alertView = UIAlertController(title: "NOTE", message: "Get ready: you're about to be asked for permission to use your Camera or Photo Library.", preferredStyle: UIAlertControllerStyle.Alert)
+    let alertView = UIAlertController(title: "NOTE", message: "You'll be asked for your permission to use your Camera or Photo Library.", preferredStyle: UIAlertControllerStyle.Alert)
     
 //    let actionController = UIAlertController(title: "Add Photo", message: "Choose your photo source.", preferredStyle: UIAlertControllerStyle.ActionSheet)
     
@@ -57,6 +57,16 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 //        mainImageView.layer.borderWidth = 1.5
         
         PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        
+        if defaults.boolForKey("notFirstRun") {
+            println("not first-time launch")
+        } else {
+            defaults.setBool(true, forKey: "notFirstRun")
+            println("first-time launch")
+            self.permissionAlert()
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -337,6 +347,15 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                 }
             }
         }
+    }
+    
+    func permissionAlert() {
+
+        let permitAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+        
+        self.presentViewController(self.alertView, animated: true, completion: nil)
+        
+        alertView.addAction(permitAction)
     }
     
 }

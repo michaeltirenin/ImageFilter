@@ -15,13 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if defaults.objectForKey("notFirstRun") {
-            println("not first-time launch")
-        } else {
-            defaults.setBool(true, forKey: "notFirstRun")
-            println("first-time launch")
-        }
+//        let defaults = NSUserDefaults.standardUserDefaults()
+//        if defaults.objectForKey("notFirstRun") {
+//            println("not first-time launch")
+//        } else {
+//            defaults.setBool(true, forKey: "notFirstRun")
+//            println("first-time launch")
+//        }
         
         return true
     }

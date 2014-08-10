@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6205" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cA1-wm-X1g">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6198"/>
         <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
@@ -177,21 +178,32 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="esG-YF-Ntm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                                    <rect key="frame" x="8" y="8" width="94" height="94"/>
                                                     <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vQ-Gw-jjv">
+                                                    <rect key="frame" x="0.0" y="82" width="110" height="28"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="esG-YF-Ntm" secondAttribute="trailing" constant="-8" id="02r-1V-Ddx"/>
-                                            <constraint firstItem="esG-YF-Ntm" firstAttribute="leading" secondItem="XfY-kz-OTA" secondAttribute="leadingMargin" constant="-8" id="2cR-zg-vog"/>
-                                            <constraint firstItem="esG-YF-Ntm" firstAttribute="top" secondItem="XfY-kz-OTA" secondAttribute="topMargin" constant="-8" id="Zj8-Bo-5a9"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="esG-YF-Ntm" secondAttribute="bottom" constant="-8" id="ehX-Ir-2hE"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="esG-YF-Ntm" secondAttribute="trailing" id="02r-1V-Ddx"/>
+                                            <constraint firstItem="esG-YF-Ntm" firstAttribute="leading" secondItem="XfY-kz-OTA" secondAttribute="leadingMargin" id="2cR-zg-vog"/>
+                                            <constraint firstItem="8vQ-Gw-jjv" firstAttribute="top" secondItem="XfY-kz-OTA" secondAttribute="topMargin" constant="74" id="Fsr-VE-eAV"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="8vQ-Gw-jjv" secondAttribute="trailing" constant="-8" id="IZl-ic-KHg"/>
+                                            <constraint firstItem="8vQ-Gw-jjv" firstAttribute="leading" secondItem="XfY-kz-OTA" secondAttribute="leadingMargin" constant="-8" id="KS4-NB-4lA"/>
+                                            <constraint firstItem="esG-YF-Ntm" firstAttribute="top" secondItem="XfY-kz-OTA" secondAttribute="topMargin" id="Zj8-Bo-5a9"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="esG-YF-Ntm" secondAttribute="bottom" id="ehX-Ir-2hE"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="8vQ-Gw-jjv" secondAttribute="bottom" constant="-8" id="gs6-Hw-2PL"/>
                                         </constraints>
-                                        <size key="customSize" width="110" height="110"/>
                                         <connections>
                                             <outlet property="filterImageView" destination="esG-YF-Ntm" id="QHs-EG-VSi"/>
+                                            <outlet property="filterLabel" destination="8vQ-Gw-jjv" id="7Y9-hC-o0c"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

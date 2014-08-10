@@ -17,11 +17,13 @@ class Filter {
         self.name = name
     }
     // Jeff's approach
-    func createFilterThumbnailFromImage(image: UIImage, completionHandler: (image: UIImage) -> Void) {
-        let inputImage = CIImage(image: image)
+    func createFilterThumbnailFromImage(previewImage: UIImage, completionHandler: (image: UIImage) -> Void) {
+        
+        var ciImage = CIImage(image: previewImage)
         var filter = CIFilter(name: self.name)
         filter.setDefaults()
-        filter.setValue(inputImage, forKey: kCIInputImageKey)
+        filter.setValue(ciImage, forKey: kCIInputImageKey)
+        
         var outputImage = filter.outputImage
         
         var finalImage = UIImage(CIImage: outputImage)
