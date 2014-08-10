@@ -28,6 +28,7 @@ class GridViewController: UIViewController, UICollectionViewDataSource, PhotoSel
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         var scale = UIScreen.mainScreen().scale
         var flowLayout = self.collectionView.collectionViewLayout as UICollectionViewFlowLayout
         var cellSize = flowLayout.itemSize

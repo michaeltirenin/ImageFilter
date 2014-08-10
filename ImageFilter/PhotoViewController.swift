@@ -16,6 +16,8 @@ protocol PhotoSelectedDelegate {
 
 class PhotoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate/*, PHPhotoLibraryChangeObserver*/ {
     
+    var filterImageSize : CGSize = CGSize(width: 94, height: 94)
+    
     var asset : PHAsset!
     
     var delegate : PhotoSelectedDelegate?
@@ -110,6 +112,9 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
             } else {
                 filter.createFilterThumbnailFromImage(self.filterThumbnail!, completionHandler: { (image) -> Void in
                     cell.filterImageView.image = image
+//                    cell.filterImageView.sizeThatFits(self.filterImageSize)
+//                    self.collectionView.reloadData()
+
                     println("three")
                 })
             }
@@ -255,8 +260,9 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
 
     func fetchThumbnailImage() {
         if self.asset != nil {
-            //can't get to size to filterImageView
-            var targetSize = CGSize(width: CGRectGetWidth(self.imageView.frame)/2, height: CGRectGetHeight(self.imageView.frame)/2)
+
+            var targetSize = filterImageSize
+//            var targetSize = CGSize(width: CGRectGetWidth(self.imageView.frame)/2, height: CGRectGetHeight(self.imageView.frame)/2)
             PHImageManager.defaultManager().requestImageForAsset(self.asset, targetSize: targetSize, contentMode: PHImageContentMode.AspectFill, options: nil, resultHandler: { (result: UIImage!, info: [NSObject : AnyObject]!) -> Void in
 
                 self.filterThumbnail = result
