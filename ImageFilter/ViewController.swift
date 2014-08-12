@@ -9,7 +9,7 @@
 import UIKit
 import Photos
 
-class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, PhotoSelectedDelegate, PHPhotoLibraryChangeObserver {
+class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, PhotoSelectedDelegate, PhotoTakenDelegate, PHPhotoLibraryChangeObserver {
     
 //    var bandwWasClicked : Bool = false
 //    var sepiaWasClicked : Bool = false
@@ -19,6 +19,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     let photoPicker = UIImagePickerController()
     let cameraPicker = UIImagePickerController()
     let cancelPicker = UIImagePickerController()
+    let camera2Picker = UIImagePickerController()
+    
     var imageViewSize : CGSize!
     var actionController = UIAlertController(title: "Title", message: "Message", preferredStyle: UIAlertControllerStyle.Alert)
 
@@ -53,6 +55,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             self.cameraPicker.delegate = self
         }
         
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            self.camera2Picker.sourceType = UIImagePickerControllerSourceType.Camera
+            self.camera2Picker.allowsEditing = true
+            self.camera2Picker.delegate = self
+        }
+        
 //        mainImageView.layer.borderColor = UIColor.grayColor().CGColor
 //        mainImageView.layer.borderWidth = 1.5
         
@@ -76,7 +84,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 //            self.initialLoad = true
 //        }
         self.imageViewSize = self.mainImageView.frame.size
-        
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -106,6 +113,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 //            if (self.sepiaFilterButtonOutlet) {
 //                self.sepiaFilterButtonOutlet.hidden = false
 //            }
+        } else if segue.identifier == "ShowCamera" {
+            let cameraVC = segue.destinationViewController as CameraViewController
+            cameraVC.photoDelegate = self
         }
     }
 
@@ -153,6 +163,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
                     })
                     self.actionController.addAction(cameraAction)
                 }
+
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            
+            let camera2Action = UIAlertAction(title: "Camera 2", style: UIAlertActionStyle.Default, handler: {(action: UIAlertAction!) -> Void in
+                
+                self.checkAuthentication({ (status) -> Void in
+                    if status == PHAuthorizationStatus.Authorized {
+                        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+                            self.performSegueWithIdentifier("ShowCamera", sender: self)
+                        })
+                    }
+                })
+            })
+            self.actionController.addAction(camera2Action)
+        }
 
         let photoAction = UIAlertAction(title: "Photo Library", style: UIAlertActionStyle.Default, handler: {(action : UIAlertAction!) -> Void in
 
@@ -241,6 +266,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 //        PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: targetSize, contentMode: PHImageContentMode.AspectFill, options: nil) { (image, info) -> Void in
 //            self.mainImageView.image = image
 //        }
+    }
+    
+    func photoTaken(photo: UIImage) -> Void {
+
+        self.mainImageView.image = photo
+//        self.updateImage()
     }
     
 //    @IBOutlet weak var bandwFilterButtonOutlet: UIButton!

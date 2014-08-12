@@ -54,7 +54,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aIf-mR-uMd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0jW-e1-jkr"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aIf-mR-uMd" secondAttribute="bottom" constant="66" id="1vS-cF-KWK"/>
                             <constraint firstItem="mu1-58-3ce" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8f4-B6-bSo"/>
                             <constraint firstAttribute="centerX" secondItem="MPp-Ng-T3Y" secondAttribute="centerX" id="Mah-1C-Rxx"/>
                             <constraint firstItem="mu1-58-3ce" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TOd-Wk-peZ"/>
@@ -63,19 +62,106 @@
                             <constraint firstItem="mu1-58-3ce" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="bKi-5t-G9P"/>
                             <constraint firstItem="aIf-mR-uMd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ebG-TP-kKO"/>
                             <constraint firstItem="aIf-mR-uMd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="h81-zf-HGK"/>
+                            <constraint firstItem="MPp-Ng-T3Y" firstAttribute="top" secondItem="aIf-mR-uMd" secondAttribute="bottom" constant="16" id="qur-Ys-az4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rB2-Ip-vab"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="getPhotoFromImageOutlet" destination="aIf-mR-uMd" id="5fX-fc-rX5"/>
                         <outlet property="mainImageView" destination="mu1-58-3ce" id="qzp-CL-1Dk"/>
                         <outlet property="photoButtonOutlet" destination="MPp-Ng-T3Y" id="vKb-ok-ivu"/>
                         <segue destination="aKZ-RY-Gkw" kind="show" identifier="ShowGrid" id="gIv-k6-eGj"/>
+                        <segue destination="Jk5-hW-rEY" kind="show" identifier="ShowCamera" id="LKf-R1-a7Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="823" y="797"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="lgR-HL-jzb">
+            <objects>
+                <viewController id="Jk5-hW-rEY" customClass="CameraViewController" customModule="ImageFilter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UGB-2Z-k2N"/>
+                        <viewControllerLayoutGuide type="bottom" id="LdZ-vx-VqY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qrl-ei-LcU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZE-H1-qCu">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k12-eX-OWi">
+                                <rect key="frame" x="402" y="344" width="178" height="192"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="cU7-DJ-sff"/>
+                                    <constraint firstAttribute="height" constant="192" id="jsU-KM-TiB"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yc-Xk-us9">
+                                <rect key="frame" x="402" y="344" width="178" height="192"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="178" id="ZRA-fB-SIW"/>
+                                    <constraint firstAttribute="height" constant="192" id="Zrr-c9-FB2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePhoto:" destination="Jk5-hW-rEY" eventType="touchUpInside" id="uAr-hT-bJL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LdZ-vx-VqY" firstAttribute="top" secondItem="BZE-H1-qCu" secondAttribute="bottom" id="1nH-hX-7Oh"/>
+                            <constraint firstItem="BZE-H1-qCu" firstAttribute="top" secondItem="UGB-2Z-k2N" secondAttribute="bottom" id="VS4-EU-Ynm"/>
+                            <constraint firstAttribute="trailing" secondItem="BZE-H1-qCu" secondAttribute="trailing" id="ZM0-W8-6KV"/>
+                            <constraint firstItem="LdZ-vx-VqY" firstAttribute="top" secondItem="k12-eX-OWi" secondAttribute="bottom" constant="20" id="hDq-7d-Xud"/>
+                            <constraint firstItem="BZE-H1-qCu" firstAttribute="leading" secondItem="qrl-ei-LcU" secondAttribute="leading" id="kQB-d9-2CK"/>
+                            <constraint firstAttribute="trailing" secondItem="8yc-Xk-us9" secondAttribute="trailing" constant="20" id="l4W-mm-rgq"/>
+                            <constraint firstAttribute="trailing" secondItem="k12-eX-OWi" secondAttribute="trailing" constant="20" id="q9L-cq-NUv"/>
+                            <constraint firstItem="LdZ-vx-VqY" firstAttribute="top" secondItem="8yc-Xk-us9" secondAttribute="bottom" constant="20" id="xnt-13-8HF"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Save Photo" id="uVo-BS-wEn">
+                            <connections>
+                                <action selector="savePhotoBarButton:" destination="Jk5-hW-rEY" id="dCV-fg-rFV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="jqK-rN-Bqu"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ypz-31-AhW"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="vcr-4s-WQq"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="gky-oO-tuC"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="1Fs-ec-yuv"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Gh9-OA-GT3"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="xeN-bQ-kJV"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="2M1-mk-FP9"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="CD8-ep-7Q6"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="q1p-b4-8H6"/>
+                        <barButtonItem title="Take Photo" id="QUS-6P-6WK">
+                            <connections>
+                                <action selector="takePhotoBarButton:" destination="Jk5-hW-rEY" id="eui-fV-DSt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="SFR-x7-ff4"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="cameraView" destination="BZE-H1-qCu" id="0JI-Wf-jtn"/>
+                        <outlet property="imageView" destination="k12-eX-OWi" id="pbt-Ee-nm3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cd0-PR-0DX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="823" y="1519"/>
         </scene>
         <!--Grid View Controller-->
         <scene sceneID="gBb-uA-9eW">
@@ -133,6 +219,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="ywl-RK-UPL" secondAttribute="trailing" constant="-16" id="lL8-DJ-Jgd"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="ywl-RK-UPL" id="X7m-BP-gV1"/>
                     </connections>
@@ -229,14 +316,15 @@
                             <constraint firstItem="2c4-c5-hs6" firstAttribute="top" secondItem="X4R-Ed-aV5" secondAttribute="bottom" constant="18" id="089-j0-lmh"/>
                             <constraint firstItem="X4R-Ed-aV5" firstAttribute="top" secondItem="Tty-KH-w9e" secondAttribute="bottom" constant="23" id="2Xn-al-pX2"/>
                             <constraint firstItem="2c4-c5-hs6" firstAttribute="leading" secondItem="K0h-k0-LoB" secondAttribute="leadingMargin" id="DlQ-al-T67"/>
+                            <constraint firstItem="ahA-fj-bhs" firstAttribute="top" secondItem="2c4-c5-hs6" secondAttribute="bottom" constant="16" id="E7I-92-h6e"/>
                             <constraint firstItem="X4R-Ed-aV5" firstAttribute="trailing" secondItem="K0h-k0-LoB" secondAttribute="trailingMargin" id="IJe-gX-Goe"/>
                             <constraint firstItem="cn9-is-Pjx" firstAttribute="top" secondItem="ahA-fj-bhs" secondAttribute="bottom" constant="20" id="KcS-Ti-ZGy"/>
-                            <constraint firstItem="cn9-is-Pjx" firstAttribute="top" secondItem="2c4-c5-hs6" secondAttribute="bottom" constant="66" id="MI9-LH-mkm"/>
                             <constraint firstItem="X4R-Ed-aV5" firstAttribute="leading" secondItem="K0h-k0-LoB" secondAttribute="leadingMargin" id="WQB-Ix-pPR"/>
                             <constraint firstAttribute="centerX" secondItem="ahA-fj-bhs" secondAttribute="centerX" id="k4z-CX-Dcz"/>
                             <constraint firstItem="2c4-c5-hs6" firstAttribute="trailing" secondItem="K0h-k0-LoB" secondAttribute="trailingMargin" id="q8R-Tp-WFx"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="2c4-c5-hs6" id="YAp-0S-te5"/>
                         <outlet property="imageView" destination="X4R-Ed-aV5" id="3Jr-94-O0R"/>
@@ -249,13 +337,16 @@
         <!--Navigation Controller-->
         <scene sceneID="bIl-9U-lcm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cA1-wm-X1g" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="cA1-wm-X1g" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LCh-jo-4Cp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="NL6-Gh-5ox">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Wc2-b1-wAT"/>
                     </connections>

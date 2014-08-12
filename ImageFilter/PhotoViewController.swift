@@ -66,8 +66,6 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-//        self.filterThumbnailSize = self.filterThumbnail!.size
-        
     }
 
 // selected image and return to root view

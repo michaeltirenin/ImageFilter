@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F22B4E81199435F400A564B2 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B4E80199435F400A564B2 /* FilterCell.swift */; };
 		F22B4E8319947BC200A564B2 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22B4E8219947BC200A564B2 /* Filter.swift */; };
+		F24D76551998723100DE2D98 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D76541998723100DE2D98 /* CameraViewController.swift */; };
 		F289131519901A5C00C4FE87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289131419901A5C00C4FE87 /* AppDelegate.swift */; };
 		F289131719901A5C00C4FE87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289131619901A5C00C4FE87 /* ViewController.swift */; };
 		F289131A19901A5C00C4FE87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F289131819901A5C00C4FE87 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		F22B4E80199435F400A564B2 /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		F22B4E8219947BC200A564B2 /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		F24D76541998723100DE2D98 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		F289130F19901A5C00C4FE87 /* ImageFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F289131319901A5C00C4FE87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F289131419901A5C00C4FE87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				F289131619901A5C00C4FE87 /* ViewController.swift */,
 				F2ACC5E31991DFF20080F455 /* GridViewController.swift */,
 				F2ACC5E51991E0040080F455 /* PhotoViewController.swift */,
+				F24D76541998723100DE2D98 /* CameraViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				F22B4E81199435F400A564B2 /* FilterCell.swift in Sources */,
 				F289131719901A5C00C4FE87 /* ViewController.swift in Sources */,
 				F2ACC5E21991DFCA0080F455 /* PhotoCell.swift in Sources */,
+				F24D76551998723100DE2D98 /* CameraViewController.swift in Sources */,
 				F289131519901A5C00C4FE87 /* AppDelegate.swift in Sources */,
 				F2ACC5E61991E0040080F455 /* PhotoViewController.swift in Sources */,
 			);
