@@ -39,7 +39,6 @@ class CameraViewController: UIViewController {
         
         imageView.layer.borderColor = UIColor.blackColor().CGColor
         imageView.layer.borderWidth = 1.5
-
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -113,45 +112,18 @@ class CameraViewController: UIViewController {
                 self.imageView.image = image
             })
         })
+        
+        savePhotoBarButtonOutlet.title = "Save Photo"
     }
-    
-    @IBAction func takePhotoBarButton(sender: UIBarButtonItem) -> Void {
         
-        var videoConnection : AVCaptureConnection?
-        
-        for connection in self.stillImageOutput.connections {
-            if let cameraConnection = connection as? AVCaptureConnection {
-                for port in cameraConnection.inputPorts {
-                    
-                    if let videoPort = port as? AVCaptureInputPort {
-                        if videoPort.mediaType == AVMediaTypeVideo {
-                            videoConnection = cameraConnection
-                        }
-                    }
-                }
-            }
-        }
-        
-        self.stillImageOutput.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler: { (buffer, error) -> Void in
-            
-            var data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(buffer)
-            
-            // put on main thread
-            NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-                
-                var image = UIImage(data: data)
-                self.imageView.image = image
-            })
-        })
-        
-        self.photo = self.imageView.image
-    }
+    @IBOutlet weak var savePhotoBarButtonOutlet: UIBarButtonItem!
     
     @IBAction func savePhotoBarButton(sender: UIBarButtonItem) {
         
-        var imageData = UIImageJPEGRepresentation(self.imageView.image, 1.0)
-        self.imageView.image = UIImage(data: imageData)
-        UIImageWriteToSavedPhotosAlbum(self.imageView.image, nil, nil, nil)
+        if self.imageView.image != nil {
+            var imageData = UIImageJPEGRepresentation(self.imageView.image, 1.0)
+            self.imageView.image = UIImage(data: imageData)
+            UIImageWriteToSavedPhotosAlbum(self.imageView.image, nil, nil, nil)
         
 //        let targetSize = CGSize(width: CGRectGetWidth(self.imageView.frame), height: CGRectGetHeight(self.imageView.frame))
 //        // request the image for the asset
@@ -159,8 +131,9 @@ class CameraViewController: UIViewController {
 //            self.imageView.image = result
 //        }
         
-        self.photoDelegate!.photoTaken(self.imageView.image)
+            self.photoDelegate!.photoTaken(self.imageView.image)
     
-        self.navigationController.popToRootViewControllerAnimated(true)
+            self.navigationController.popToRootViewControllerAnimated(true)
+        }
     }
 }

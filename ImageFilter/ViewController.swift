@@ -31,7 +31,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     let adjustmentFormatterIdentifier = "com.ImageFilter.michaeltirenin"
     var context = CIContext(options: nil)
     
-    @IBOutlet weak var photoButtonOutlet: UIButton!
+    @IBOutlet weak var addPhotoBarButtonOutlet: UIBarButtonItem!
     
     @IBOutlet weak var getPhotoFromImageOutlet: UIButton!
     
@@ -87,14 +87,21 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 //        }
         self.imageViewSize = self.mainImageView.frame.size
         
-        if self.mainImageView.image != nil {
-            self.addFilterOutlet.hidden = false
+        if self.mainImageView.image == nil {
+            getPhotoFromImageOutlet.backgroundColor = UIColor.lightGrayColor()
+            getPhotoFromImageOutlet.titleLabel.text = "Select Photo"
         }
+
     }
     
     override func viewDidDisappear(animated: Bool) {
+        super.viewDidAppear(animated)
         getPhotoFromImageOutlet.backgroundColor = UIColor.clearColor()
         getPhotoFromImageOutlet.titleLabel.text = ""
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
 // to fix lag from PhotoVC to ViewVC - see Alex's file
@@ -126,6 +133,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         } else if segue.identifier == "ShowFilter" {
             let filterVC = segue.destinationViewController as PhotoViewController
             filterVC.delegate = self
+            
         }
     }
 
@@ -147,11 +155,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     func setupActionController() {
         
-        self.actionController = UIAlertController(title: "Photo Select", message: "Choose photo source", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        self.actionController = UIAlertController(title: "Select Photo", message: "Choose photo source", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         if self.actionController.popoverPresentationController {
             //self.actionController.modalPresentationStyle = UIModalPresentationStyle.Popover
-            self.actionController.popoverPresentationController.sourceView = self.photoButtonOutlet
+            self.actionController.popoverPresentationController.barButtonItem = self.addPhotoBarButtonOutlet
         }
         ////// check on this:
         self.actionController.modalPresentationStyle = UIModalPresentationStyle.PageSheet
@@ -235,12 +243,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         self.actionController.addAction(cancelAction)
     }
 
-    @IBAction func getPhotoButton(sender: UIButton) {
-        
-//        self.presentViewController(self.photoPicker, animated: true, completion: nil)
+    @IBAction func addPhotoBarButton(sender: UIBarButtonItem) {
+        //        self.presentViewController(self.photoPicker, animated: true, completion: nil)
         if self.actionController.popoverPresentationController {
-            self.actionController.popoverPresentationController.sourceView = self.photoButtonOutlet
-//            self.actionController.popoverPresentationController.sourceRect =
+            self.actionController.popoverPresentationController.barButtonItem = self.addPhotoBarButtonOutlet
+            //            self.actionController.popoverPresentationController.sourceRect =
         }
         self.presentViewController(self.actionController, animated: true, completion: nil)
     }

@@ -61,6 +61,7 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
         PHImageManager.defaultManager().requestImageForAsset(self.asset, targetSize: targetSize, contentMode: PHImageContentMode.AspectFill, options: nil) { (result : UIImage!, [NSObject : AnyObject]!) -> Void in
             self.imageView.image = result
         }
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -69,7 +70,7 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
     }
     
 // selected image and return to root view
-    @IBAction func selectPhotoButton(sender: UIButton) {
+    @IBAction func savePhotoButton(sender: UIBarButtonItem) {
         self.delegate!.photoSelected(self.asset)
         self.navigationController.popToRootViewControllerAnimated(true)
         // look at Alex's example for userSelectedPhoto to implement "loadImageForAsset" (remove lag)

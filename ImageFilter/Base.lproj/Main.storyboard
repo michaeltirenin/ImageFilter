@@ -22,11 +22,11 @@
                                 <rect key="frame" x="16" y="84" width="568" height="450"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aIf-mR-uMd">
-                                <rect key="frame" x="16" y="84" width="568" height="450"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="84" width="568" height="448"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Add Photo">
+                                        <fragment content="Select Photo">
                                             <attributes>
                                                 <font key="NSFont" size="20" name="HelveticaNeue"/>
                                             </attributes>
@@ -37,61 +37,34 @@
                                     <action selector="getPhotoFromImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lur-oC-lvI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPp-Ng-T3Y">
-                                <rect key="frame" x="246" y="550" width="108" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="108" id="80a-hk-tOD"/>
-                                    <constraint firstAttribute="height" constant="30" id="y6R-2e-dlA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Add Photo">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getPhotoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tMp-TI-VXV"/>
-                                </connections>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNG-FG-nEk">
-                                <rect key="frame" x="499" y="550" width="85" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="85" id="h55-qc-GVo"/>
-                                    <constraint firstAttribute="height" constant="30" id="tyc-jp-AzY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Add Filter">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addFilter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pdk-Ae-Bqu"/>
-                                    <segue destination="EXB-7v-BkR" kind="popoverPresentation" identifier="ShowFilter" popoverAnchorView="rNG-FG-nEk" id="I7c-2o-S72">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aIf-mR-uMd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0jW-e1-jkr"/>
                             <constraint firstItem="mu1-58-3ce" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8f4-B6-bSo"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rNG-FG-nEk" secondAttribute="bottom" constant="20" id="9LE-jx-TrN"/>
-                            <constraint firstAttribute="centerX" secondItem="MPp-Ng-T3Y" secondAttribute="centerX" id="Mah-1C-Rxx"/>
                             <constraint firstItem="mu1-58-3ce" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TOd-Wk-peZ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MPp-Ng-T3Y" secondAttribute="bottom" constant="20" id="TWl-07-Whs"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mu1-58-3ce" secondAttribute="bottom" constant="66" id="Uxd-yy-uX4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mu1-58-3ce" secondAttribute="bottom" constant="22" id="Uxd-yy-uX4"/>
                             <constraint firstItem="mu1-58-3ce" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="bKi-5t-G9P"/>
                             <constraint firstItem="aIf-mR-uMd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ebG-TP-kKO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aIf-mR-uMd" secondAttribute="bottom" constant="24" id="gSI-Dg-rHv"/>
                             <constraint firstItem="aIf-mR-uMd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="h81-zf-HGK"/>
-                            <constraint firstItem="MPp-Ng-T3Y" firstAttribute="top" secondItem="aIf-mR-uMd" secondAttribute="bottom" constant="16" id="qur-Ys-az4"/>
-                            <constraint firstItem="rNG-FG-nEk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="voB-kE-wXx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mu1-58-3ce" secondAttribute="bottom" constant="22" id="rob-fX-WZR"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="mWf-De-aId"/>
+                        <barButtonItem title="Select Photo" id="yhM-OJ-HUM">
+                            <connections>
+                                <action selector="addPhotoBarButton:" destination="BYZ-38-t0r" id="wKx-dE-357"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="g5b-Mm-d0N"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="rB2-Ip-vab"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addFilterOutlet" destination="rNG-FG-nEk" id="ZxC-H6-zTB"/>
+                        <outlet property="addPhotoBarButtonOutlet" destination="yhM-OJ-HUM" id="qhD-ZQ-SYk"/>
                         <outlet property="getPhotoFromImageOutlet" destination="aIf-mR-uMd" id="5fX-fc-rX5"/>
                         <outlet property="mainImageView" destination="mu1-58-3ce" id="qzp-CL-1Dk"/>
-                        <outlet property="photoButtonOutlet" destination="MPp-Ng-T3Y" id="vKb-ok-ivu"/>
                         <segue destination="aKZ-RY-Gkw" kind="show" identifier="ShowGrid" id="gIv-k6-eGj"/>
                         <segue destination="Jk5-hW-rEY" kind="show" identifier="ShowCamera" id="LKf-R1-a7Z"/>
                     </connections>
@@ -117,7 +90,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k12-eX-OWi">
-                                <rect key="frame" x="402" y="344" width="178" height="192"/>
+                                <rect key="frame" x="402" y="342" width="178" height="192"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="178" id="cU7-DJ-sff"/>
@@ -125,7 +98,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yc-Xk-us9">
-                                <rect key="frame" x="402" y="344" width="178" height="192"/>
+                                <rect key="frame" x="402" y="342" width="178" height="192"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="178" id="ZRA-fB-SIW"/>
                                     <constraint firstAttribute="height" constant="192" id="Zrr-c9-FB2"/>
@@ -144,40 +117,27 @@
                             <constraint firstItem="LdZ-vx-VqY" firstAttribute="top" secondItem="BZE-H1-qCu" secondAttribute="bottom" id="1nH-hX-7Oh"/>
                             <constraint firstItem="BZE-H1-qCu" firstAttribute="top" secondItem="UGB-2Z-k2N" secondAttribute="bottom" id="VS4-EU-Ynm"/>
                             <constraint firstAttribute="trailing" secondItem="BZE-H1-qCu" secondAttribute="trailing" id="ZM0-W8-6KV"/>
-                            <constraint firstItem="LdZ-vx-VqY" firstAttribute="top" secondItem="k12-eX-OWi" secondAttribute="bottom" constant="20" id="hDq-7d-Xud"/>
+                            <constraint firstItem="LdZ-vx-VqY" firstAttribute="top" secondItem="k12-eX-OWi" secondAttribute="bottom" constant="22" id="hDq-7d-Xud"/>
                             <constraint firstItem="BZE-H1-qCu" firstAttribute="leading" secondItem="qrl-ei-LcU" secondAttribute="leading" id="kQB-d9-2CK"/>
                             <constraint firstAttribute="trailing" secondItem="8yc-Xk-us9" secondAttribute="trailing" constant="20" id="l4W-mm-rgq"/>
                             <constraint firstAttribute="trailing" secondItem="k12-eX-OWi" secondAttribute="trailing" constant="20" id="q9L-cq-NUv"/>
-                            <constraint firstItem="LdZ-vx-VqY" firstAttribute="top" secondItem="8yc-Xk-us9" secondAttribute="bottom" constant="20" id="xnt-13-8HF"/>
+                            <constraint firstItem="LdZ-vx-VqY" firstAttribute="top" secondItem="8yc-Xk-us9" secondAttribute="bottom" constant="22" id="xnt-13-8HF"/>
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Save Photo" id="uVo-BS-wEn">
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="LYN-my-RA4"/>
+                        <barButtonItem id="uVo-BS-wEn">
                             <connections>
                                 <action selector="savePhotoBarButton:" destination="Jk5-hW-rEY" id="dCV-fg-rFV"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="jqK-rN-Bqu"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="ypz-31-AhW"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="vcr-4s-WQq"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="gky-oO-tuC"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="1Fs-ec-yuv"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="Gh9-OA-GT3"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="xeN-bQ-kJV"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="2M1-mk-FP9"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="CD8-ep-7Q6"/>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="q1p-b4-8H6"/>
-                        <barButtonItem title="Take Photo" id="QUS-6P-6WK">
-                            <connections>
-                                <action selector="takePhotoBarButton:" destination="Jk5-hW-rEY" id="eui-fV-DSt"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="SFR-x7-ff4"/>
                     </toolbarItems>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cameraView" destination="BZE-H1-qCu" id="0JI-Wf-jtn"/>
                         <outlet property="imageView" destination="k12-eX-OWi" id="pbt-Ee-nm3"/>
+                        <outlet property="savePhotoBarButtonOutlet" destination="uVo-BS-wEn" id="qBt-R5-zig"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cd0-PR-0DX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -266,7 +226,7 @@
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2c4-c5-hs6">
                                 <rect key="frame" x="16" y="404" width="568" height="130"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="130" id="dxv-gM-gFJ"/>
                                 </constraints>
@@ -319,33 +279,28 @@
                                     <outlet property="delegate" destination="EXB-7v-BkR" id="bVk-JN-IG6"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahA-fj-bhs">
-                                <rect key="frame" x="240" y="550" width="120" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="0iW-IE-y3k"/>
-                                    <constraint firstAttribute="height" constant="30" id="U8d-ef-Tbv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Select Photo"/>
-                                <connections>
-                                    <action selector="selectPhotoButton:" destination="EXB-7v-BkR" eventType="touchUpInside" id="K6W-gO-XM9"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2c4-c5-hs6" firstAttribute="top" secondItem="X4R-Ed-aV5" secondAttribute="bottom" constant="18" id="089-j0-lmh"/>
                             <constraint firstItem="X4R-Ed-aV5" firstAttribute="top" secondItem="Tty-KH-w9e" secondAttribute="bottom" constant="23" id="2Xn-al-pX2"/>
                             <constraint firstItem="2c4-c5-hs6" firstAttribute="leading" secondItem="K0h-k0-LoB" secondAttribute="leadingMargin" id="DlQ-al-T67"/>
-                            <constraint firstItem="ahA-fj-bhs" firstAttribute="top" secondItem="2c4-c5-hs6" secondAttribute="bottom" constant="16" id="E7I-92-h6e"/>
                             <constraint firstItem="X4R-Ed-aV5" firstAttribute="trailing" secondItem="K0h-k0-LoB" secondAttribute="trailingMargin" id="IJe-gX-Goe"/>
-                            <constraint firstItem="cn9-is-Pjx" firstAttribute="top" secondItem="ahA-fj-bhs" secondAttribute="bottom" constant="20" id="KcS-Ti-ZGy"/>
                             <constraint firstItem="X4R-Ed-aV5" firstAttribute="leading" secondItem="K0h-k0-LoB" secondAttribute="leadingMargin" id="WQB-Ix-pPR"/>
-                            <constraint firstAttribute="centerX" secondItem="ahA-fj-bhs" secondAttribute="centerX" id="k4z-CX-Dcz"/>
                             <constraint firstItem="2c4-c5-hs6" firstAttribute="trailing" secondItem="K0h-k0-LoB" secondAttribute="trailingMargin" id="q8R-Tp-WFx"/>
+                            <constraint firstItem="cn9-is-Pjx" firstAttribute="top" secondItem="2c4-c5-hs6" secondAttribute="bottom" constant="22" id="tdb-gS-0A9"/>
                         </constraints>
                     </view>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <toolbarItems>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="fcg-ac-mIB"/>
+                        <barButtonItem title="Save Photo" id="NY8-og-ihr">
+                            <connections>
+                                <action selector="savePhotoButton:" destination="EXB-7v-BkR" id="tDG-9J-4Wf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="qXR-aL-h5f"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="2c4-c5-hs6" id="YAp-0S-te5"/>
                         <outlet property="imageView" destination="X4R-Ed-aV5" id="3Jr-94-O0R"/>
@@ -377,7 +332,4 @@
             <point key="canvasLocation" x="127" y="797"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="I7c-2o-S72"/>
-    </inferredMetricsTieBreakers>
 </document>
