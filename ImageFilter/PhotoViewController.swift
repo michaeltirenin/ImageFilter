@@ -15,13 +15,13 @@ protocol PhotoSelectedDelegate {
 }
 
 class PhotoViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate/*, PHPhotoLibraryChangeObserver*/ {
-    
+        
     var filterImageSize : CGSize = CGSize(width: 94, height: 94)
     
     var asset : PHAsset!
     
     var delegate : PhotoSelectedDelegate?
-
+    
     @IBOutlet weak var imageView: UIImageView!
     
 // filter
@@ -48,7 +48,7 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
         self.setFilters()
         
         self.fetchThumbnailImage()
-        
+                        
 //        self.updateImage()
         
 //        PHPhotoLibrary.sharedPhotoLibrary().registerChangeObserver(self)
@@ -67,7 +67,7 @@ class PhotoViewController: UIViewController, UICollectionViewDataSource, UIColle
         super.viewDidAppear(animated)
         
     }
-
+    
 // selected image and return to root view
     @IBAction func selectPhotoButton(sender: UIButton) {
         self.delegate!.photoSelected(self.asset)

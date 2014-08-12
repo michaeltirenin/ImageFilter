@@ -14,6 +14,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 //    var bandwWasClicked : Bool = false
 //    var sepiaWasClicked : Bool = false
     
+    var asset : PHAsset!
+    
     var addPhotoImageWasClicked : Bool = false
     
     let photoPicker = UIImagePickerController()
@@ -84,6 +86,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 //            self.initialLoad = true
 //        }
         self.imageViewSize = self.mainImageView.frame.size
+        
+        if self.mainImageView.image != nil {
+            self.addFilterOutlet.hidden = false
+        }
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -116,6 +122,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         } else if segue.identifier == "ShowCamera" {
             let cameraVC = segue.destinationViewController as CameraViewController
             cameraVC.photoDelegate = self
+            
+        } else if segue.identifier == "ShowFilter" {
+            let filterVC = segue.destinationViewController as PhotoViewController
+            filterVC.delegate = self
         }
     }
 
@@ -249,6 +259,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         var editedImage = info[UIImagePickerControllerEditedImage] as UIImage!
         self.mainImageView.image = editedImage
+       
+        var imageData = UIImageJPEGRepresentation(self.mainImageView.image, 1.0)
+        self.mainImageView.image = UIImage(data: imageData)
+        UIImageWriteToSavedPhotosAlbum(self.mainImageView.image, nil, nil, nil)
+
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -271,9 +286,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func photoTaken(photo: UIImage) -> Void {
 
         self.mainImageView.image = photo
-//        self.updateImage()
     }
-    
+        
 //    @IBOutlet weak var bandwFilterButtonOutlet: UIButton!
     
 //    @IBAction func bandwFilterButton(sender: UIButton) {
@@ -387,6 +401,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         self.presentViewController(self.alertView, animated: true, completion: nil)
         
         alertView.addAction(permitAction)
+    }
+    @IBOutlet weak var addFilterOutlet: UIButton!
+    
+    @IBAction func addFilter(sender: UIButton) {
+
+        self.performSegueWithIdentifier("ShowFilter", sender: self)
+        
     }
     
 }
