@@ -18,15 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mu1-58-3ce">
-                                <rect key="frame" x="16" y="84" width="568" height="450"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="mu1-58-3ce" customClass="FilteredImageView" customModule="designableViews">
+                                <rect key="frame" x="16" y="84" width="568" height="448"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="sepiaIntensity">
+                                        <real key="value" value="-1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aIf-mR-uMd">
                                 <rect key="frame" x="16" y="84" width="568" height="448"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="Select Photo">
+                                        <fragment content="Select New Photo">
                                             <attributes>
                                                 <font key="NSFont" size="20" name="HelveticaNeue"/>
                                             </attributes>
@@ -43,17 +56,17 @@
                             <constraint firstItem="aIf-mR-uMd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0jW-e1-jkr"/>
                             <constraint firstItem="mu1-58-3ce" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8f4-B6-bSo"/>
                             <constraint firstItem="mu1-58-3ce" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="TOd-Wk-peZ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mu1-58-3ce" secondAttribute="bottom" constant="22" id="Uxd-yy-uX4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mu1-58-3ce" secondAttribute="bottom" constant="24" id="Uxd-yy-uX4"/>
                             <constraint firstItem="mu1-58-3ce" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="bKi-5t-G9P"/>
                             <constraint firstItem="aIf-mR-uMd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ebG-TP-kKO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aIf-mR-uMd" secondAttribute="bottom" constant="24" id="gSI-Dg-rHv"/>
                             <constraint firstItem="aIf-mR-uMd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="h81-zf-HGK"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mu1-58-3ce" secondAttribute="bottom" constant="22" id="rob-fX-WZR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mu1-58-3ce" secondAttribute="bottom" constant="24" id="rob-fX-WZR"/>
                         </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="mWf-De-aId"/>
-                        <barButtonItem title="Select Photo" id="yhM-OJ-HUM">
+                        <barButtonItem title="Select New Photo" id="yhM-OJ-HUM">
                             <connections>
                                 <action selector="addPhotoBarButton:" destination="BYZ-38-t0r" id="wKx-dE-357"/>
                             </connections>
@@ -332,4 +345,7 @@
             <point key="canvasLocation" x="127" y="797"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photo.jpg" width="600" height="800"/>
+    </resources>
 </document>

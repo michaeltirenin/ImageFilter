@@ -45,6 +45,9 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "The Photo Filter-er"
+        
         self.setupActionController() // necessary? or just in viewWillAppear
         
         self.photoPicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -89,7 +92,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         
         if self.mainImageView.image == nil {
             getPhotoFromImageOutlet.backgroundColor = UIColor.lightGrayColor()
-            getPhotoFromImageOutlet.titleLabel.text = "Select Photo"
+            getPhotoFromImageOutlet.titleLabel.text = "Select New Photo"
         }
 
     }
@@ -155,7 +158,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
 
     func setupActionController() {
         
-        self.actionController = UIAlertController(title: "Select Photo", message: "Choose photo source", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        self.actionController = UIAlertController(title: "Select New Photo", message: "Choose photo source", preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         if self.actionController.popoverPresentationController {
             //self.actionController.modalPresentationStyle = UIModalPresentationStyle.Popover

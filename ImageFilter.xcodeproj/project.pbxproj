@@ -15,6 +15,15 @@
 		F289131A19901A5C00C4FE87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F289131819901A5C00C4FE87 /* Main.storyboard */; };
 		F289131C19901A5C00C4FE87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F289131B19901A5C00C4FE87 /* Images.xcassets */; };
 		F289132819901A5C00C4FE87 /* ImageFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F289132719901A5C00C4FE87 /* ImageFilterTests.swift */; };
+		F294F266199A90F400ED652A /* designableViews.h in Headers */ = {isa = PBXBuildFile; fileRef = F294F265199A90F400ED652A /* designableViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F294F272199A90F400ED652A /* designableViewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F294F271199A90F400ED652A /* designableViewsTests.swift */; };
+		F294F275199A90F400ED652A /* designableViews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F294F261199A90F400ED652A /* designableViews.framework */; };
+		F294F276199A90F400ED652A /* designableViews.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F294F261199A90F400ED652A /* designableViews.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F294F281199A92DE00ED652A /* FilteredImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F294F280199A92DE00ED652A /* FilteredImageView.swift */; };
+		F294F285199A97A600ED652A /* photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F294F284199A97A600ED652A /* photo.jpg */; };
+		F294F286199A97A600ED652A /* photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F294F284199A97A600ED652A /* photo.jpg */; };
+		F294F287199A97A600ED652A /* photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F294F284199A97A600ED652A /* photo.jpg */; };
+		F294F288199A97A600ED652A /* photo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F294F284199A97A600ED652A /* photo.jpg */; };
 		F2ACC5E21991DFCA0080F455 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ACC5E11991DFCA0080F455 /* PhotoCell.swift */; };
 		F2ACC5E41991DFF20080F455 /* GridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ACC5E31991DFF20080F455 /* GridViewController.swift */; };
 		F2ACC5E61991E0040080F455 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ACC5E51991E0040080F455 /* PhotoViewController.swift */; };
@@ -28,7 +37,42 @@
 			remoteGlobalIDString = F289130E19901A5C00C4FE87;
 			remoteInfo = ImageFilter;
 		};
+		F294F26C199A90F400ED652A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F289130719901A5C00C4FE87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F289130E19901A5C00C4FE87;
+			remoteInfo = ImageFilter;
+		};
+		F294F273199A90F400ED652A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F289130719901A5C00C4FE87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F294F260199A90F400ED652A;
+			remoteInfo = designableViews;
+		};
+		F294F277199A90F400ED652A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F289130719901A5C00C4FE87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F294F260199A90F400ED652A;
+			remoteInfo = designableViews;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F294F27E199A90F400ED652A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F294F276199A90F400ED652A /* designableViews.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F22B4E80199435F400A564B2 /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
@@ -43,6 +87,14 @@
 		F289132119901A5C00C4FE87 /* ImageFilterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageFilterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F289132619901A5C00C4FE87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F289132719901A5C00C4FE87 /* ImageFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFilterTests.swift; sourceTree = "<group>"; };
+		F294F261199A90F400ED652A /* designableViews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = designableViews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F294F264199A90F400ED652A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F294F265199A90F400ED652A /* designableViews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = designableViews.h; sourceTree = "<group>"; };
+		F294F26B199A90F400ED652A /* designableViewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = designableViewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F294F270199A90F400ED652A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F294F271199A90F400ED652A /* designableViewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = designableViewsTests.swift; sourceTree = "<group>"; };
+		F294F280199A92DE00ED652A /* FilteredImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredImageView.swift; sourceTree = "<group>"; };
+		F294F284199A97A600ED652A /* photo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = photo.jpg; sourceTree = "<group>"; };
 		F2ACC5E11991DFCA0080F455 /* PhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		F2ACC5E31991DFF20080F455 /* GridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridViewController.swift; sourceTree = "<group>"; };
 		F2ACC5E51991E0040080F455 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
@@ -53,10 +105,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F294F275199A90F400ED652A /* designableViews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F289131E19901A5C00C4FE87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F294F25D199A90F400ED652A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F294F268199A90F400ED652A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -71,6 +138,8 @@
 			children = (
 				F289131119901A5C00C4FE87 /* ImageFilter */,
 				F289132419901A5C00C4FE87 /* ImageFilterTests */,
+				F294F262199A90F400ED652A /* designableViews */,
+				F294F26E199A90F400ED652A /* designableViewsTests */,
 				F289131019901A5C00C4FE87 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +149,8 @@
 			children = (
 				F289130F19901A5C00C4FE87 /* ImageFilter.app */,
 				F289132119901A5C00C4FE87 /* ImageFilterTests.xctest */,
+				F294F261199A90F400ED652A /* designableViews.framework */,
+				F294F26B199A90F400ED652A /* designableViewsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +163,7 @@
 				F2FCE2B719913B000005ACCD /* Controllers */,
 				F289131419901A5C00C4FE87 /* AppDelegate.swift */,
 				F289131B19901A5C00C4FE87 /* Images.xcassets */,
+				F294F284199A97A600ED652A /* photo.jpg */,
 				F289131219901A5C00C4FE87 /* Supporting Files */,
 			);
 			path = ImageFilter;
@@ -118,6 +190,41 @@
 			isa = PBXGroup;
 			children = (
 				F289132619901A5C00C4FE87 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F294F262199A90F400ED652A /* designableViews */ = {
+			isa = PBXGroup;
+			children = (
+				F294F265199A90F400ED652A /* designableViews.h */,
+				F294F263199A90F400ED652A /* Supporting Files */,
+				F294F280199A92DE00ED652A /* FilteredImageView.swift */,
+			);
+			path = designableViews;
+			sourceTree = "<group>";
+		};
+		F294F263199A90F400ED652A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F294F264199A90F400ED652A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F294F26E199A90F400ED652A /* designableViewsTests */ = {
+			isa = PBXGroup;
+			children = (
+				F294F271199A90F400ED652A /* designableViewsTests.swift */,
+				F294F26F199A90F400ED652A /* Supporting Files */,
+			);
+			path = designableViewsTests;
+			sourceTree = "<group>";
+		};
+		F294F26F199A90F400ED652A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F294F270199A90F400ED652A /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -153,6 +260,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		F294F25E199A90F400ED652A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F294F266199A90F400ED652A /* designableViews.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		F289130E19901A5C00C4FE87 /* ImageFilter */ = {
 			isa = PBXNativeTarget;
@@ -161,10 +279,13 @@
 				F289130B19901A5C00C4FE87 /* Sources */,
 				F289130C19901A5C00C4FE87 /* Frameworks */,
 				F289130D19901A5C00C4FE87 /* Resources */,
+				F294F27E199A90F400ED652A /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F294F274199A90F400ED652A /* PBXTargetDependency */,
+				F294F278199A90F400ED652A /* PBXTargetDependency */,
 			);
 			name = ImageFilter;
 			productName = ImageFilter;
@@ -189,6 +310,42 @@
 			productReference = F289132119901A5C00C4FE87 /* ImageFilterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F294F260199A90F400ED652A /* designableViews */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F294F27D199A90F400ED652A /* Build configuration list for PBXNativeTarget "designableViews" */;
+			buildPhases = (
+				F294F25C199A90F400ED652A /* Sources */,
+				F294F25D199A90F400ED652A /* Frameworks */,
+				F294F25E199A90F400ED652A /* Headers */,
+				F294F25F199A90F400ED652A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = designableViews;
+			productName = designableViews;
+			productReference = F294F261199A90F400ED652A /* designableViews.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F294F26A199A90F400ED652A /* designableViewsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F294F27F199A90F400ED652A /* Build configuration list for PBXNativeTarget "designableViewsTests" */;
+			buildPhases = (
+				F294F267199A90F400ED652A /* Sources */,
+				F294F268199A90F400ED652A /* Frameworks */,
+				F294F269199A90F400ED652A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F294F26D199A90F400ED652A /* PBXTargetDependency */,
+			);
+			name = designableViewsTests;
+			productName = designableViewsTests;
+			productReference = F294F26B199A90F400ED652A /* designableViewsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -203,6 +360,14 @@
 						DevelopmentTeam = C65MMLEB3C;
 					};
 					F289132019901A5C00C4FE87 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = F289130E19901A5C00C4FE87;
+					};
+					F294F260199A90F400ED652A = {
+						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = C65MMLEB3C;
+					};
+					F294F26A199A90F400ED652A = {
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = F289130E19901A5C00C4FE87;
 					};
@@ -223,6 +388,8 @@
 			targets = (
 				F289130E19901A5C00C4FE87 /* ImageFilter */,
 				F289132019901A5C00C4FE87 /* ImageFilterTests */,
+				F294F260199A90F400ED652A /* designableViews */,
+				F294F26A199A90F400ED652A /* designableViewsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -234,6 +401,7 @@
 			files = (
 				F289131A19901A5C00C4FE87 /* Main.storyboard in Resources */,
 				F289131C19901A5C00C4FE87 /* Images.xcassets in Resources */,
+				F294F285199A97A600ED652A /* photo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +409,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F294F286199A97A600ED652A /* photo.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F294F25F199A90F400ED652A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F294F287199A97A600ED652A /* photo.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F294F269199A90F400ED652A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F294F288199A97A600ED652A /* photo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +455,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F294F25C199A90F400ED652A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F294F281199A92DE00ED652A /* FilteredImageView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F294F267199A90F400ED652A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F294F272199A90F400ED652A /* designableViewsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -277,6 +478,21 @@
 			isa = PBXTargetDependency;
 			target = F289130E19901A5C00C4FE87 /* ImageFilter */;
 			targetProxy = F289132219901A5C00C4FE87 /* PBXContainerItemProxy */;
+		};
+		F294F26D199A90F400ED652A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F289130E19901A5C00C4FE87 /* ImageFilter */;
+			targetProxy = F294F26C199A90F400ED652A /* PBXContainerItemProxy */;
+		};
+		F294F274199A90F400ED652A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F294F260199A90F400ED652A /* designableViews */;
+			targetProxy = F294F273199A90F400ED652A /* PBXContainerItemProxy */;
+		};
+		F294F278199A90F400ED652A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F294F260199A90F400ED652A /* designableViews */;
+			targetProxy = F294F277199A90F400ED652A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -429,6 +645,81 @@
 			};
 			name = Release;
 		};
+		F294F279199A90F400ED652A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = designableViews/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F294F27A199A90F400ED652A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = designableViews/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F294F27B199A90F400ED652A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = designableViewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageFilter.app/ImageFilter";
+			};
+			name = Debug;
+		};
+		F294F27C199A90F400ED652A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = designableViewsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageFilter.app/ImageFilter";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -458,6 +749,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		F294F27D199A90F400ED652A /* Build configuration list for PBXNativeTarget "designableViews" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F294F279199A90F400ED652A /* Debug */,
+				F294F27A199A90F400ED652A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F294F27F199A90F400ED652A /* Build configuration list for PBXNativeTarget "designableViewsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F294F27B199A90F400ED652A /* Debug */,
+				F294F27C199A90F400ED652A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
